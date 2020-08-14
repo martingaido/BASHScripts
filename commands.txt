@@ -1,0 +1,255 @@
+********************************
+***   Useful Linux Commands  ***
+********************************
+
+$ cat <FILENAME> | less                                             (muestra por pagina y permite búsqueda como vim)
+$ tar cvf <FILE.TAR> dirname/                                       (create new .tar archive)
+$ tar xvf <FILE.TAR>                                                (extract a .tar archive)
+$ tar tvf <FILE.TAR>                                                (view a .tar archive)
+$ grep -I “the” <file>                                              (search string in file)
+$ grep -r “string” *                                                (search string recursively)
+$ grep -r -i "some string" /home/yourusername                       (search string in all files within directory)
+$ grep -rnw '/poner_ruta_aca' -e 'drop database'                    (this is a best option to search files within directories)
+$ find -iname “file.c”                                              (find files using filenames)
+$ find -iname “my file.c” -exec md5sum {} \;                        (find and execute files)
+$ gzip [file]                                                       (create a .gzip file)
+$ gzip -d [file]                                                    (uncompress a .gzip file)
+$ locate FILENAME.EXT                                               (locate files in hard drive)
+$ grep -r "something" .                                             (search for string "something" in hard drive)
+$ grep -Ril "something" /path/to                                    (search for string "something" in a specific path - best option)
+$ find /pathdir -type d -exec chmod 755 {} +                        (change permissions in all directories except files)
+$ find /pathdir -type f -exec chmod 644 {} +                        (change permissions in all files except directories)
+$ echo "d *" | mail --user=www-data -N                              (delete all emails in /var/mail)
+$ wc -l /file                                                       (count number of lines of a file)
+$ ec -w /file                                                       (count number of words of a file)
+$ head -n 20 /file                                                  (display first 20 lines of a file)
+$ tail -n 20 /file                                                  (display last 20 lines of a file)
+$ cat -n /file | more                                               (display pagination and number of lines)
+$ ls -ad .*                                                         (display only hidden files and folders)      
+$ cloc /dir                                                         (count number of lines of code within directory)
+$ du -h /folder                                                     (display folder size)
+$ du -a / | sort -n -r | head -n 10                                 (display 10 most large files and folders)
+$ du -hsx * | sort -rh | head -10                                   (display 10 most large files and folders (another approach))
+$ apache2ctl -M                                                     (list all installed modules in apache web server)
+$ sudo a2enmod <nom_module>                                         (enable apache web server module)
+$ sudo a2dismod <nom_module>                                        (disable apache web server module)
+$ openssl enc -aes-256-cbc -salt -in file.txt -out file.txt.enc     (Encrypt a single file with OpenSSL)
+$ openssl enc -aes-256-cbc -d -in file.txt.enc -out file.txt        (Decrypt a single file with OpenSSL)
+$ ssh -l user remote.host                                           (create an ssh connection)
+$ ssh -v -l user remote.host                                        (debug ssh client)
+$ shutdown -Fr now                                                  (force to check filesystem)
+$ ps -ef | more                                                     (display current running processes)
+$ kill -9 [PID]                                                     (kill a process)
+$ tail -f [FILE]                                                    (display real time changes in a file)
+$ less [FILE]                                                       (display file content)
+$ whatis <command>                                                  (get help of a specific command)
+$ cat /etc/issue                                                    (information about the os)
+$ cat /etc/*-release                                                (more detailes information about the os)
+$ ifconfig eth0 10.10.10.10
+$ ifconfig eth0 up | down
+$ ifconfig eth0 arp | -arp                                          (enable or disable arp table)
+$ arp -a                                                            (arp table)
+$ route -n
+$ service [daemon] start|stop                                       (start or stop a daemon)
+$ chkconfig                                                         (enable o disable system services)
+$ htop                                                              (display memory and processes information)
+$ free -h / watch free -h                                           (display memory information - real time)
+$ sudo sh -c “sync; echo 3 > /proc/sys/vm/drop_caches”              (clear the cache on linux)
+$ watch free -h o H                                                 (display changes in memory - real time)
+$ expr 1 + 2 \* 8 / 3                                               (perform aritmetic calculations)
+$ calc 15 / 4                                                       (with decimals)
+# netstat -a -p -n | grep <port-number>                             (display services using a specific port)
+$ scp [file] user@host:/etc/some                                    (secure file copy)
+$ service --status-all                                              (display service status, "(+)Service running, (-)Not Running, (?)Unknown)
+$ df -h                                                             (display disk space usage)
+$ du -h                                                             (display disk space usage)
+$ find / -xdev -type f -size +10M -exec ls -lah {} \; | sort -nk 5  (display files that are bigger than 10megs.)
+$ source .bashrc                                                    (apply changes to .bashrc without closing the terminal)
+$ pushd /etc                                                        (jump to the /etc folder)
+$ popd                                                              (return to the /etc folder)
+$ <command or process>&                                             (send command or process to the background)
+$ CTRL + Z                                                          (pause a process then type "bg" to send it to the background>
+$ jobs                                                              (display running processes in background)
+$ fg <1>                                                            (bring a process from the background)
+$ ssh-add <key.pem>                                                 (add key to localhost)
+$ netstat -nt | grep :443 | wc -l                                   (check apache concurrences on port 443)
+$ netstat -ant | grep :443                                          (display connected ip addresses)
+$ ab -c 1000 -n 50000 -k https://www.domain.com/                    (run apache benchmarks to stress server)
+$ autocannon -s 200 -d 20 http://www.domain.com/                    (run benchmark on domain using "autocannon")
+$ npm i autocannon -g                                               (install "autocannon" globally using npm)
+# lsof                                                              (list open files)
+# lsof -i tcp:80                                                    (display running services in port 80)
+# lsof -i :8080                                                                
+# lsof -i tcp|udp
+# lsof /var/log/some.log                                            (display info of a file and the user using it)
+# lsof -p PID                                                       (display all used files for a specific process)
+# lsof -p PID | grep bin                                            (display binary directory for a specific process)
+# lsof -p PID | grep lib                                            (same for libs)
+# lsof -p PID | grep log                                            (same for logs)
+# lsof -u USERNAME                                                  (display all open files for this user)
+
+*********************
+***   Using VIM   ***
+*********************
+
+:wr                                                                 (write file)
+:q                                                                  (quit vim)
+:q!                                                                 (quit without saving)
+:se nu                                                              (show line numbers)
+:/[string]                                                          (search forward) // “N” to jump to next result
+:?[string]                                                          (search backward) // “N” to jump to next result
+“u”                                                                 (undo (without quotes)
+"ctrl+r"                                                            (redo (without quotes)
+“yy”                                                                (yank a line / copy a line to clipboard)
+“66yy”                                                              (yank 66 lines of code)
+“p”                                                                 (paste content on clipboard)
+“dd”                                                                (delete a line)
+“58G”                                                               (jump to line 58)
+“!”                                                                 (execute a shell command)
+:split [file]                                                       (open a new file if exists or create one (split visual view))
+vim -o [file1] [file2]                                              (open two or more files)
+“ctrl+w”                                                            (move between opened files)
+“$”                                                                 (move to the end of the line)
+“0”                                                                 (move to the beginning of the line)
+:%s/[someting]/[replacement]/g                                      (Search and replace)
+:%s/^[a]/!/                                                         (replace 1st char(a) with !)
+500+dd                                                              (delete 500 lines)
+$ vim +143 [file]                                                   (go to line 143)
+$ vim +/search-term [file]                                          (go to the first match)
+
+---Browsing the file (navigation)
+e  = end of a word
+w  = beginning of a word
+$  = end of a line
+0  = beginning of a line
+G  = end of a file
+gg = start of a file
+---Visual mode = SHIFT+v
+
+*********************
+***   Using APT   ***
+*********************
+
+# apt-get update                   
+# apt-get upgrade                  
+# apt-cache search <package>        
+# apt-cache show <package>         
+# apt-get dist-upgrade         
+# apt-get install <package>       
+# apt-get remove <package>           
+# apt-get remove --purge <package>
+# apt-get clean
+# apt-get autoclean
+# apt list --installed
+# apt autoremove                     
+
+*********************
+***   Using SED   ***
+*********************
+
+$ sed 's/value1/value2/' file                                       (replace 'value1' for 'value2' once, don't write the file)
+$ sed 's/value1/value2/g' file                                      (replace 'value1' for 'value2' globally, don't write the file)
+$ sed 's/value1/value2/g' file1 > file2                             (does the same thing and write output into 'file2')
+$ sed -i 's/value1/value2/g' file1                                  (replace and write file)
+$ sed -i 's/ˆvalue1/value2/g' file1                                 (replace 'value1' at the beginning of the line by char: ˆ)
+$ sed -i 's/value1$/value2/g' file1                                 (replace 'value2' at the end of the line by char: $)
+$ sed 's/[0-9]/value2/g' file1                                      (replace any number with 'value2')
+$ sed 's/[A-Z]/value2/g' file1                                      (replace any uppercase alphanumeric with 'value2')
+$ sed 's/[A-z]/value2/g' file1                                      (does the same with uppercase and lowercase)
+$ sed 's/[A-z0-9]/value2/g' file1                                   (replace numbers and letters with 'value2')
+$ sed 's/[A-Z]i/value2/g' file1                                     (replace uppercase followed by 'i' with 'value2')
+$ sed 's/[0-9]/(&)/g' file1                                         (mark between () the matching of first value)
+$ sed 's/[0-9][0-9]/(&)/g' file1                                    (mark between () two contiguos numbers in 'value1')
+$ sed 's/\//value2/g' file1                                         (replace with escape character)
+$ sed 's/[^0-9]/value2/g' file1                                     (replace non-numbers with 'value2', ^ inside [])
+$ sed 's/[^A-Z]/value2/g' file1                                     (replace non uppercase alphanumeric with 'value2')
+$ sed 's/[0-z ]/value2/g' file1                                     (replace all alphanumeric and space with 'value2')
+$ sed 's/some1/some2/g;s/some3/some4/g' file1                       (replace two values with the same command)
+$ sed 's/some1/some2/Ig' file1                                      (replace 'some1' with 'some2' and ignore casing)
+$ sed -i -f myrules file1                                           (execute 'myrules' with all the replacements, this is done over 'file1')
+$ sed 's/\bNEW\b/some2/Ig' file1                                    (find the word 'NEW' and replace, doesn't matter the case)
+$ sed '/\bNEW\b/Id' file1                                           (delete all lines containing the word 'new', doen't matter the case)
+$ sed '1!{/^#/d;}' file1                                            (take out all comments and commented lines except the fist line)
+
+*********************
+***   Using AWK   ***
+*********************
+
+$ awk '{ print }' file1                                             (print all lines of a file)
+$ awk '{ print $1 }' file1                                          (print the first column)
+$ awk '{ print $1,$2 }' file1                                       (print the first and second column)
+$ awk '{ print $1.$2 }' file1                                       (print the first and second column merged)
+$ awk '/[a-z]/ { print }' file1                                     (print alphanumeric only)
+$ awk '/[0-9]/ { print }' file1                                     (print numeric only)
+$ awk '/^[0-9]/ { print }' file1                                    (print all that begins with numbers)
+$ awk '/[0-9]$/ { print }' file1                                    (print all that ends with numbers)
+$ awk '{ if($1 ~ /123/) print }' file1                              (if column 1 is equal to 123, then print)
+$ awk '{ if($2 ~ /[0-9]/) print }' file1                            (if column 2 is equal to numbers, then print)
+
+************************
+***   GIT Commands   ***
+************************
+
+$ apt-get install git                                               (install git on a Debian based system)
+$ apt-get install git-core                                          (install git server)
+$ git init                                                          (initialize the current located folder as a git repo)
+$ git config --list                                                 (display current configurations)
+$ git config --global user.name "User Name"                         (set the user name)
+$ git config --global user.email "user@email.com"                   (set the user email)
+$ git status                                                        (display the status of the repo, locally)
+$ git log -P                                                        (display the history of the repo with details)
+$ git add *.algo o <file>                                           (send a file or bunch of files to the 'staging area')
+$ git commit -m "message"                                           (make a commit with comments)
+$ git --version                                                     (display git version)
+$ git help <command>                                                (display git help or man page)
+$ git diff                                                          (display changes in files)
+$ git checkout <file>                                               (bring the last commit of the specific file)
+$ git blame <file>                                                  (provides information about changes and who made those changes)
+$ git branch --list                                                 (list all branches that we have under the repo)
+$ git branch <name>                                                 (creates a new branch)
+$ git checkout <branch>                                             (display the pointer of a specific branch)
+$ git merge <branch>                                                (merge with master, always locates in master)
+$ git mergetool                                                     (tool to solve conflicts)
+$ git config --global merge.tool vimdiff                            (select "vimdiff" as the default tool to solve conflicts)
+$ git config --global alias.SOMETHING "command"                     (create an alias of the specified command with the name 'SOMETHING')
+$ git log --decorate --graph --oneline --all                        (display detailed logs)
+$ git log --shortlog                                                (display short logs)
+$ git clone https://repo.git                                        (clone a remote repo locally)
+$ git fetch                                                         (bring all remote branches)
+$ git pull, push
+$ git stash
+$ git stash list
+$ git stash show
+$ git stash apply
+$ git tag
+
+************************
+***   Using Screen   ***
+************************
+
+$ apt-get install screen                                            (install 'screen' multiplexer)
+$ screen                                                            (start 'screen' with a bash shell)
+$ CTRL+A y "?"                                                      (display commands and shortcuts)
+$ CTRL+A y "d"                                                      (detach console with a process running)
+$ CTRL+A y "n"                                                      (move to the next console)
+$ CTRL+A y "p"                                                      (move to the previous console)
+$ CTRL+A y "c"                                                      (create a new console)
+$ CTRL+A y "x"                                                      (block 'screen' with password)
+$ screen -ls                                                        (list all running consoles)
+$ screen -r                                                         (list session id if there is one)
+$ screen -r <NUMBER>                                                (show specific session)
+
+
+function encrypt(){
+
+    which openssl &> /dev/null
+    [ $? -ne 0 ]  && echo "OPENSSL is not installed." && return 1
+    openssl enc -aes-256-cbc -salt -in $1 -out $2
+}
+
+function decrypt(){
+
+    which openssl &> /dev/null
+    [ $? -ne 0 ]  && echo "OPENSSL is not installed." && return 1
+    openssl enc -aes-256-cbc -d -in $1 -out $2
+}
