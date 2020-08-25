@@ -19,6 +19,7 @@ $ grep -r "something" .                                             (search for 
 $ grep -Ril "something" /path/to                                    (search for string "something" in a specific path - best option)
 $ find /pathdir -type d -exec chmod 755 {} +                        (change permissions in all directories except files)
 $ find /pathdir -type f -exec chmod 644 {} +                        (change permissions in all files except directories)
+$ find <Path_To_Old_Files> -mtime +30 -delete;                      (delete files older than 30 days)
 $ echo "d *" | mail --user=www-data -N                              (delete all emails in /var/mail)
 $ wc -l /file                                                       (count number of lines of a file)
 $ ec -w /file                                                       (count number of words of a file)
