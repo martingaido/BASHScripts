@@ -91,6 +91,11 @@ $ npm i autocannon -g                                               (install "au
 # lsof -p PID | grep lib                                            (same for libs)
 # lsof -p PID | grep log                                            (same for logs)
 # lsof -u USERNAME                                                  (display all open files for this user)
+# apt-cache search linux-image                                      (search for kernels)
+# sudo apt install linux-image-<flavour>                            (install kernel)
+# dpkg --list | grep linux-image                                    (list installed kernels)
+# sudo apt remove --purge <linux-image-x.x.x>                       (remove installed kernel)
+# sudo update-grub2                                                 (updated GRUB loader with installed kernels)
 
 *********************
 ***   Using VIM   ***
