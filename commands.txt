@@ -280,6 +280,24 @@ $ screen -ls                                                        (list all ru
 $ screen -r                                                         (list session id if there is one)
 $ screen -r <NUMBER>                                                (show specific session)
 
+**********************
+***   Using TMUX   ***
+**********************
+
+$ tmux                                                              (start tmux)
+$ tmux ls                                                           (list all sessions)
+$ CTRL + b c                                                        (create a new window)
+$ CTRL + v ,                                                        (rename current window)
+$ CTRL + b &                                                        (kill current window)
+$ CTRL + b p                                                        (move to the previous window)
+$ CTRL + b n                                                        (move to the next window)
+$ CTRL + b %                                                        (split pane vertically)
+$ CTRL + b "                                                        (split pane horizontally)
+$ CTRL + b (arrow up)                                               (switch to pane to the direction)
+$ CTRL + b (arrow down)                                             (switch to pane to the direction)
+$ CTRL + b (arrow left)                                             (switch to pane to the direction)
+$ CTRL + b (arrow right)                                            (switch to pane to the direction)
+$ exit                                                              (exit tmux)
 
 function encrypt(){
 
