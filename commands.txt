@@ -28,6 +28,8 @@ $ wc -l /file                                                       (count numbe
 $ ec -w /file                                                       (count number of words of a file)
 $ head -n 20 /file                                                  (display first 20 lines of a file)
 $ tail -n 20 /file                                                  (display last 20 lines of a file)
+$ shuf -n N input > output                                          (use shuf with the -n option as shown below, to get N random lines)
+$ sort -R input | head -n 100 > output                              (sort the file randomly and pick first 100 lines)
 $ cat -n /file | more                                               (display pagination and number of lines)
 $ ls -ad .*                                                         (display only hidden files and folders)      
 $ cloc /dir                                                         (count number of lines of code within directory)
