@@ -289,7 +289,7 @@ $ screen -r <NUMBER>                                                (show specif
 $ tmux                                                              (start tmux)
 $ tmux ls                                                           (list all sessions)
 $ CTRL + b c                                                        (create a new window)
-$ CTRL + v ,                                                        (rename current window)
+$ CTRL + b ,                                                        (rename current window)
 $ CTRL + b &                                                        (kill current window)
 $ CTRL + b p                                                        (move to the previous window)
 $ CTRL + b n                                                        (move to the next window)
