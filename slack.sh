@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Store in /usr/bin/slack
+# Store script in /usr/bin/slack
 # chmod 755
 # Run: /usr/bin/slack "GROUP_NAME" "MESSAGE"
 
@@ -37,7 +37,6 @@ init_params() {
   fi
   slack_message=${@}
 }
-
 
 send_message() {
   local channel=${1}
