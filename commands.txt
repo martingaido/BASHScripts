@@ -314,3 +314,6 @@ function decrypt(){
     [ $? -ne 0 ]  && echo "OPENSSL is not installed." && return 1
     openssl enc -aes-256-cbc -d -in $1 -out $2
 }
+
+# Fetch this file from console using aliases
+alias <alias_name>='curl https://raw.githubusercontent.com/martingaido/BASHScripts/master/commands.txt'
