@@ -100,6 +100,7 @@ $ npm i autocannon -g                                               (install "au
 # dpkg --list | grep linux-image                                    (list installed kernels)
 # sudo apt remove --purge <linux-image-x.x.x>                       (remove installed kernel)
 # sudo update-grub2                                                 (updated GRUB loader with installed kernels)
+# dpkg-reconfigure tzdata                                           (reconfigure timezone settings in Debian OS)
 
 *********************
 ***   Using VIM   ***
