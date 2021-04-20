@@ -276,8 +276,10 @@ $ git tag
 $ npm install pm2@latest -g                                         (install PM2 globally)
 $ pm2 start <app.js>                                                (start app.js)
 $ pm2 start <app.js> -i max                                         (start with cluster mode using all proccessors)
-$ pm2 start <app.js> -I max —name “APP_NAME” \ 
-  -o /logs/app.log -e /logs/app.log —merge-logs —time —watch        (start with cluster, logs, time on logs and watch mode)
+
+$ pm2 start app.js --name APP_NAME --watch -i max --merge-logs --time --output logs/app.log --error logs/app.log
+                                                                    (start with cluster, logs, time on logs and watch mode)
+                                                                    
 $ pm2 list                                                          (list all running proccesses)
 $ pm2 restart <app_name>                                            (restart process using app name)
 $ pm2 reload <app_name>                                             (reload process using app name)
