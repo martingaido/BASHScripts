@@ -270,6 +270,23 @@ $ git stash apply
 $ git tag
 
 ************************
+***   PM2 Commands   ***
+************************
+
+$ npm install pm2@latest -g                                         (install PM2 globally)
+$ pm2 start <app.js>                                                (start app.js)
+$ pm2 start <app.js> -i max                                         (start with cluster mode using all proccessors)
+$ pm2 start <app.js> -I max —name “APP_NAME” \ 
+  -o /logs/app.log -e /logs/app.log —merge-logs —time —watch        (start with cluster, logs, time on logs and watch mode)
+$ pm2 restart <app_name>                                            (restart process using app name)
+$ pm2 reload <app_name>                                             (reload process using app name)
+$ pm2 stop <app_name>                                               (stop process using app name)
+$ pm2 delete <app_name>                                             (delete registered process using app name)
+$ pm2 logs                                                          (show logs)
+$ pm2 logs --lines 200                                              (show 200 lines of logs)
+$ pm2 monit                                                         (start monitor)
+
+************************
 ***   Using Screen   ***
 ************************
 
