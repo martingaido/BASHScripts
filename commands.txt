@@ -101,6 +101,8 @@ $ npm i autocannon -g                                               (install "au
 # sudo apt remove --purge <linux-image-x.x.x>                       (remove installed kernel)
 # sudo update-grub2                                                 (updated GRUB loader with installed kernels)
 # dpkg-reconfigure tzdata                                           (reconfigure timezone settings in Debian OS)
+# vcgencmd measure_volts core                                       (measure voltage RaspberryPi)
+# vcgencmd measure_temp                                             (measure temperature RaspberryPi)
 
 *********************
 ***   Using VIM   ***
