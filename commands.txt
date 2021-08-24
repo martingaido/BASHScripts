@@ -16,7 +16,9 @@ $ split -l 500 <filename>                                           (split file 
 $ split -b 200MB <big_filename>                                     (split a large file into 200MB files)
 $ cat * > merged-file                                               (merge all files into one single file)
 $ gzip [file]                                                       (create a .gzip file)
-$ gzip -d [file]                                                    (uncompress a .gzip file)
+$ gzip -d [file]                                                    (decompress a .gzip file)
+$ zip -r <file.zip> </folder>                                       (compress a folder)
+$ unzip <file.zip>                                                  (decompress a zipped folder)
 $ locate FILENAME.EXT                                               (locate files in hard drive)
 $ grep -r "something" .                                             (search for string "something" in hard drive)
 $ grep -Ril "something" /path/to                                    (search for string "something" in a specific path - best option)
@@ -67,6 +69,8 @@ $ expr 1 + 2 \* 8 / 3                                               (perform ari
 $ calc 15 / 4                                                       (with decimals)
 # netstat -a -p -n | grep <port-number>                             (display services using a specific port)
 $ scp [file] user@host:/etc/some                                    (secure file copy)
+$ sudo scp -i file.pem /source user@host:~/destination/             (secure copy from local to remote using a key)
+$ sudo scp -i file.pem user@host:~/source /local-dest               (secure copy from remote to local using a key)
 $ curl -Is http://www.domain.com                                    (check if site is alive)
 $ service --status-all                                              (display service status, "(+)Service running, (-)Not Running, (?)Unknown)
 $ df -h                                                             (display disk space usage)
@@ -103,6 +107,13 @@ $ npm i autocannon -g                                               (install "au
 # dpkg-reconfigure tzdata                                           (reconfigure timezone settings in Debian OS)
 # vcgencmd measure_volts core                                       (measure voltage RaspberryPi)
 # vcgencmd measure_temp                                             (measure temperature RaspberryPi)
+
+********************
+***   Mongo DB   ***
+********************
+
+$ mongodump -d <database_name> -o <directory_backup>                (dump a database into folder)
+$ mongorestore -d <database_name> <directory_backup>                (restore a mongo dump file)
 
 *********************
 ***   Using VIM   ***
