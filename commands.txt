@@ -1,6 +1,6 @@
-********************************
-***   Useful Linux Commands  ***
-********************************
+*********************************
+***   Useful Linux Commands   ***
+*********************************
 
 $ cat <FILENAME> | less                                             (muestra por pagina y permite búsqueda como vim)
 $ tar cvf <FILE.TAR> dirname/                                       (create new .tar archive)
@@ -102,11 +102,14 @@ $ npm i autocannon -g                                               (install "au
 # apt-cache search linux-image                                      (search for kernels)
 # sudo apt install linux-image-<flavour>                            (install kernel)
 # dpkg --list | grep linux-image                                    (list installed kernels)
-# sudo apt remove --purge <linux-image-x.x.x>                       (remove installed kernel)
-# sudo update-grub2                                                 (updated GRUB loader with installed kernels)
+$ sudo apt remove --purge <linux-image-x.x.x>                       (remove installed kernel)
+$ sudo update-grub2                                                 (updated GRUB loader with installed kernels)
 # dpkg-reconfigure tzdata                                           (reconfigure timezone settings in Debian OS)
 # vcgencmd measure_volts core                                       (measure voltage RaspberryPi)
 # vcgencmd measure_temp                                             (measure temperature RaspberryPi)
+$ timedatectl                                                       (display current timezone)
+$ timedatectl list-timezones                                        (list available timezones)
+$ sudo timedatectl set-timezone your_time_zone                      (set timezone)
 
 ********************
 ***   Mongo DB   ***
