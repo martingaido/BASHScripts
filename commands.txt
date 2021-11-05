@@ -304,6 +304,10 @@ $ pm2 delete <app_name>                                             (delete regi
 $ pm2 logs                                                          (show logs)
 $ pm2 logs --lines 200                                              (show 200 lines of logs)
 $ pm2 monit                                                         (start monitor)
+$ pm2 save                                                          (save a snapshot of your processes)
+$ pm2 startup                                                       (start saved proccesses when linux reboots (run pm2 save first))
+$ pm2 resurrect                                                     (To manually bring back previously saved processes (via pm2 save))
+$ pm2 unstartup                                                     (To disable and remove the current startup configuration)
 
 ************************
 ***   Using Screen   ***
