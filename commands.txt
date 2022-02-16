@@ -344,6 +344,15 @@ $ CTRL + b (arrow left)                                             (switch to p
 $ CTRL + b (arrow right)                                            (switch to pane to the direction)
 $ exit                                                              (exit tmux)
 
+**************************************
+***   Node Version Manager (nvm)   ***
+**************************************
+
+$ nvm ls-remote                                                     (list all Node versions)
+$ nvm install 17.4.0                                                (install specific Node version)
+$ nvm use 17.4.0                                                    (use specific Node version as default)
+
+
 function encrypt(){
 
     which openssl &> /dev/null
