@@ -110,6 +110,7 @@ $ sudo update-grub2                                                 (updated GRU
 $ timedatectl                                                       (display current timezone)
 $ timedatectl list-timezones                                        (list available timezones)
 $ sudo timedatectl set-timezone your_time_zone                      (set timezone)
+$ certbot renew --force-renewal                                     (force to renew all letsencrypt ssl certs)
 
 ********************
 ***   Mongo DB   ***
