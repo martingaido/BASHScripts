@@ -353,6 +353,32 @@ $ nvm ls-remote                                                     (list all No
 $ nvm install 17.4.0                                                (install specific Node version)
 $ nvm use 17.4.0                                                    (use specific Node version as default)
 
+******************
+***   Docker   ***
+******************
+
+$ docker version                                                    (see the version of client and server)
+$ docker build -t hello-docker .                                    (Build an image following “Dockerfile”)
+$ docker images                                                     (list all images on computer)
+$ docker image ls                                                   (list all images on computer)
+$ docker pull <image-name>                                          (pull an image from Docker Hub)
+$ docker ps                                                         (list running containers)
+$ docker ps -a                                                      (list all containers, including stopped)
+$ docker run <image-name>                                           (run or install docker image from any location)
+$ docker run <image:version>                                        (run or install docker image with specific version)
+$ docker run -it <image-name (ej: ubuntu)>                          (run in interactive mode)
+$ docker run -d <image-name>                                        (run a container in a detached mode)
+$ docker run -p<localhost-port>:<image-port> <image-name>           (port binding)
+$ docker run —name <myapp> <image-name>                             (create a custom name for container)
+$ docker stop <container_ID>                                        (stop a specific container by ID)
+$ docker start <coniatner_ID>                                       (start a specific container by ID)
+$ docker logs <container_ID or name>                                (see the logs)
+$ docker network ls                                                 (list all generated networks)
+$ docker network create <network-name>                              (create a new network)
+$ docker-compose -f <file.yaml> up                                  (deploy all container in yaml file)
+$ docker-compose -f <file.yaml> down                                (destroy all deployed containers via Docker Compose)
+
+---
 
 function encrypt(){
 
