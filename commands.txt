@@ -377,6 +377,8 @@ $ docker network ls                                                 (list all ge
 $ docker network create <network-name>                              (create a new network)
 $ docker-compose -f <file.yaml> up                                  (deploy all container in yaml file)
 $ docker-compose -f <file.yaml> down                                (destroy all deployed containers via Docker Compose)
+$ docker rmi <image_name or container ID>                           (delete an image or container)
+$ docker exec -it <container_ID> /bin/sh                            (enter a container that’s running)
 
 ---
 
