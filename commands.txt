@@ -379,6 +379,7 @@ $ docker-compose -f <file.yaml> up                                  (deploy all 
 $ docker-compose -f <file.yaml> down                                (destroy all deployed containers via Docker Compose)
 $ docker rmi <image_name or container ID>                           (delete an image or container)
 $ docker exec -it <container_ID> /bin/sh                            (enter a container that’s running)
+$ docker system prune -a                                            (removes cache, images, stopped images, etc -- use with caution --)
 
 ---
 
