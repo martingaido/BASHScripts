@@ -111,6 +111,7 @@ $ timedatectl                                                       (display cur
 $ timedatectl list-timezones                                        (list available timezones)
 $ sudo timedatectl set-timezone your_time_zone                      (set timezone)
 $ certbot renew --force-renewal                                     (force to renew all letsencrypt ssl certs)
+$ ffmpeg -i file.m4a -acodec libmp3lame -ab 256k output.mp3         (convert "m4a" audio file to "mp3")
 
 ********************
 ***   Mongo DB   ***
