@@ -77,6 +77,8 @@ $ df -h                                                             (display dis
 $ du -h                                                             (display disk space usage)
 $ find / -xdev -type f -size +10M -exec ls -lah {} \; | sort -nk 5  (display files that are bigger than 10megs.)
 $ source .bashrc                                                    (apply changes to .bashrc without closing the terminal)
+$ exec bash                                                         (apply changes to .bashrc without closing the terminal)
+$ echo $SHELL                                                       (show current shell)
 $ pushd /etc                                                        (jump to the /etc folder)
 $ popd                                                              (return to the /etc folder)
 $ <command or process>&                                             (send command or process to the background)
