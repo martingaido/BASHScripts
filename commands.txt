@@ -281,7 +281,7 @@ $ git mergetool                                                     (tool to sol
 $ git config --global merge.tool vimdiff                            (select "vimdiff" as the default tool to solve conflicts)
 $ git config --global alias.SOMETHING "command"                     (create an alias of the specified command with the name 'SOMETHING')
 $ git clone https://repo.git                                        (clone a remote repo locally)
-$ git fetch                                                         (bring all remote branches)
+$ git fetch --all                                                   (bring all remote branches)
 $ git pull, push
 $ git stash
 $ git stash list
