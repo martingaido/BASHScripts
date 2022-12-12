@@ -275,7 +275,7 @@ $ git branch -a                                                     (see local a
 $ git checkout -b <my-branch-name>                                  (create a new branch)
 $ git checkout <my-branch-name>                                     (switch to branch locally)
 $ git merge <my-branch-name>                                        (merge to master, before running this command switch to master)
-$ git push origin —delete <my-branch-name>                          (delete remote branch)
+$ git push origin --delete <my-branch-name>                         (delete remote branch)
 $ git branch -D <my-branch-name>                                    (delete local branch)
 $ git mergetool                                                     (tool to solve conflicts)
 $ git config --global merge.tool vimdiff                            (select "vimdiff" as the default tool to solve conflicts)
