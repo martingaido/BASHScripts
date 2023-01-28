@@ -253,6 +253,7 @@ $ git config --list                                                 (display cur
 $ git config --global user.name "User Name"                         (set the user name)
 $ git config --global user.email "user@email.com"                   (set the user email)
 $ git status                                                        (display the status of the repo, locally)
+$ git show <file>                                                   (display changes on file)
 $ git add *.algo o <file>                                           (send a file or bunch of files to the 'staging area')
 $ git commit -m "message"                                           (make a commit with comments)
 $ git --version                                                     (display git version)
