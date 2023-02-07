@@ -385,6 +385,18 @@ $ docker rmi <image_name or container ID>                           (delete an i
 $ docker exec -it <container_ID> /bin/sh                            (enter a container that’s running)
 $ docker system prune -a                                            (removes cache, images, stopped images, etc -- use with caution --)
 
+*******************
+***   AWS CLI   ***
+*******************
+
+Command Reference: https://docs.aws.amazon.com/cli/latest/index.html
+
+$ aws configure                                                     (configure AWS CLI)
+$ aws iam list-users                                                (list all IAM users on this account)
+$ aws s3 ls                                                         (list all S3 buckets)
+$ aws s3 ls s3://<bucket_name> --recursive                          (list all files and folders within <bucket_name>
+
+
 ---
 
 function encrypt(){
