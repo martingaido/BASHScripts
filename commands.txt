@@ -116,6 +116,13 @@ $ sudo timedatectl set-timezone your_time_zone                      (set timezon
 $ certbot renew --force-renewal                                     (force to renew all letsencrypt ssl certs)
 $ ffmpeg -i file.m4a -acodec libmp3lame -ab 256k output.mp3         (convert "m4a" audio file to "mp3")
 
+******************
+***   Python   ***
+******************
+
+$ python3 -m venv .venv                                             (to create virtual environment)
+$ source .venv/bin/activate                                         (to activate virtual environment)
+
 ********************
 ***   Mongo DB   ***
 ********************
