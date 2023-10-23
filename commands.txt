@@ -404,21 +404,70 @@ $ aws iam list-users                                                (list all IA
 $ aws s3 ls                                                         (list all S3 buckets)
 $ aws s3 ls s3://<bucket_name> --recursive                          (list all files and folders within <bucket_name>
 
-
 ---
 
+# Functions to encrypt a single files with custom password
 function encrypt(){
 
     which openssl &> /dev/null
     [ $? -ne 0 ]  && echo "OPENSSL is not installed." && return 1
-    openssl enc -aes-256-cbc -salt -in $1 -out $2
+    # openssl enc -aes-256-cbc -salt -in $1 -out $2
+    openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
 }
 
+# Functions to decrypt a single files with custom password
 function decrypt(){
 
     which openssl &> /dev/null
     [ $? -ne 0 ]  && echo "OPENSSL is not installed." && return 1
-    openssl enc -aes-256-cbc -d -in $1 -out $2
+    # openssl enc -aes-256-cbc -d -in $1 -out $2
+    openssl enc -aes-256-cbc -d -pbkdf2 -in $1 -out $2
+}
+
+# Function to encrypt files in a folder
+encrypt_folder() {
+    # Check if openssl is installed
+    which openssl &> /dev/null
+    [ $? -ne 0 ] && echo "OPENSSL is not installed." && return 1
+
+    # Specify the input folder and output folder
+    input_folder="$1"
+    output_folder="$2"
+
+    # Create the output folder if it doesn't exist
+    mkdir -p "$output_folder"
+
+    # Encrypt each .txt file in the input folder
+    for file in "$input_folder"/*.txt; do
+        filename=$(basename "$file")
+        encrypted_file="$output_folder/${filename%.*}_encrypted.txt"
+        openssl enc -aes-256-cbc -salt -pbkdf2 -in "$file" -out "$encrypted_file"
+    done
+
+    echo "Encryption completed."
+}
+
+# Function to decrypt files in a folder
+decrypt_folder() {
+    # Check if openssl is installed
+    which openssl &> /dev/null
+    [ $? -ne 0 ] && echo "OPENSSL is not installed." && return 1
+
+    # Specify the input folder and output folder
+    input_folder="$1"
+    output_folder="$2"
+
+    # Create the output folder if it doesn't exist
+    mkdir -p "$output_folder"
+
+    # Decrypt each encrypted file in the input folder
+    for file in "$input_folder"/*.txt; do
+        filename=$(basename "$file")
+        decrypted_file="$output_folder/${filename%.*}_decrypted.txt"
+        openssl enc -aes-256-cbc -d -pbkdf2 -in "$file" -out "$decrypted_file"
+    done
+
+    echo "Decryption completed."
 }
 
 # Fetch this file from console using aliases
