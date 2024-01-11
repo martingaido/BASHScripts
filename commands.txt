@@ -404,6 +404,19 @@ $ aws iam list-users                                                (list all IA
 $ aws s3 ls                                                         (list all S3 buckets)
 $ aws s3 ls s3://<bucket_name> --recursive                          (list all files and folders within <bucket_name>
 
+********************
+***   Anaconda   ***
+********************
+
+$ conda env list                                                    (list all created environments in this computer)
+$ conda create --name <my-env-name>                                 (create a new environment with current default Python version)
+$ conda create -n <my-env-name> python=3.7                          (create a new environment with Python 3.7)
+$ conda activate <my-env-name>                                      (activate or switch to my environment)
+$ conda deactivate <my-env-name>                                    (deactivate the current environment)
+$ conda list                                                        (list all installed packages in the current environment)
+$ conda install <package>                                           (install a package within the current environment)
+$ conda env export > environment.yml                                (export my current environment to be shared with others)
+
 ---
 
 # Functions to encrypt a single files with custom password
