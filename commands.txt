@@ -115,6 +115,7 @@ $ timedatectl list-timezones                                        (list availa
 $ sudo timedatectl set-timezone your_time_zone                      (set timezone)
 $ certbot renew --force-renewal                                     (force to renew all letsencrypt ssl certs)
 $ ffmpeg -i file.m4a -acodec libmp3lame -ab 256k output.mp3         (convert "m4a" audio file to "mp3")
+$ nohup ./my_script.sh &                                            (run script in background and leave running even when disconnected)
 
 ******************
 ***   Python   ***
