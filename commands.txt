@@ -26,6 +26,7 @@ $ find /pathdir -type d -exec chmod 755 {} +                        (change perm
 $ find /pathdir -type f -exec chmod 644 {} +                        (change permissions in all files except directories)
 $ find <Path_To_Old_Files> -mtime +30 -delete;                      (delete files older than 30 days)
 $ echo "d *" | mail --user=www-data -N                              (delete all emails in /var/mail)
+$ ls -1 . | wc -l                                                   (count how many files in the current directory)
 $ wc -l /file                                                       (count number of lines of a file)
 $ ec -w /file                                                       (count number of words of a file)
 $ head -n 20 /file                                                  (display first 20 lines of a file)
